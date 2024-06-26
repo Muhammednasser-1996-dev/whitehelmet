@@ -1,0 +1,29 @@
+@import "../../../sass/sass-variables.scss";
+@mixin places {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: 700;
+}
+
+.wrapper {
+  .navbar {
+    background-color: $nav-color !important;
+    .container {
+      .btns {
+        font-weight: 700;
+        @include places;
+        .settings {
+          border-radius: 50px;
+          background-color: $nav-color;
+          color: $white-color;
+          border: none;
+          padding: 8px 18px;
+          background-color: $setting-color;
+          @include places;
+        }
+      }
+    }
+  }
+}
