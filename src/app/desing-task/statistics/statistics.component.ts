@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppRoutes } from '../../app.routes';
 
 @Component({
   selector: 'app-statistics',
@@ -7,9 +9,15 @@ import { Component } from '@angular/core';
 })
 export class StatisticsComponent {
   Active: number = 2;
-  constructor() {}
+ 
 
   setActive(value: number) {
     this.Active = value;
   }
+  constructor(private router: Router) { }
+
+  NavigateToIntegrationTask(){
+    this.router.navigate([AppRoutes.integration]);
+  }
+
 }

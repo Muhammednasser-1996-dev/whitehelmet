@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutes } from '../app.routes';
+import { HttpErrorInterceptor } from './interceptors/http-error-interceptor.interceptor';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { httpGuestInterceptorInterceptor } from './interceptors/http-guest-interceptor.interceptor';
 
 const routes: Routes = [
   {
@@ -28,13 +31,26 @@ const routes: Routes = [
             (m) => m.IntegrationTaskModule
           ),
       },
+      { path: '**', redirectTo: AppRoutes.integration } 
     ],
   },
 ];
 
 @NgModule({
   declarations: [MainLayoutComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule],
   exports: [RouterModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: httpGuestInterceptorInterceptor,
+      multi: true,
+    },
+  ],
 })
 export class CoreModule {}

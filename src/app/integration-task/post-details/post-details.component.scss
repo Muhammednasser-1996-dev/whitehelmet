@@ -1,0 +1,63 @@
+
+@import "../../../sass/sass-variables.scss";
+
+.post-details-container {
+  margin: auto;
+  padding: 20px;
+  background-color: $nav-color;
+  min-height: 100vh;
+}
+
+.post-panel {
+  margin-bottom: 20px;
+
+  .post-body {
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $white-color;
+  }
+}
+
+.comments-panel {
+  .comments {
+    margin-top: 10px;
+    padding: 10px;
+    border-bottom: 1px solid $text-light-color;
+
+    .comment-header {
+      margin-bottom: 5px;
+      .comment-name {
+        font-size: 14px;
+        font-weight: bold;
+        color: $color_2;
+      }
+    }
+
+    .comment-body {
+      font-size: 14px;
+      line-height: 1.5;
+      color: $white-color;
+    }
+  }
+}
+
+
+::ng-deep{
+    .p-panel .p-panel-header {
+        border: 1px solid $text-light-color;
+        padding: 1rem;
+        background: $active-color;
+        color: $white-color;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        border: none;
+    }
+    .p-panel .p-panel-content {
+        padding: 1rem;
+        background: $menu-color;
+        color: #495057;
+        border-top: 0 none;
+        border: none;
+    }
+}

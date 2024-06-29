@@ -5,7 +5,21 @@ import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
 import { ChartModule } from 'primeng/chart';
-const PRIME_NG_MODULES = [ButtonModule, MenuModule, BadgeModule,AvatarModule, TabViewModule, ChartModule];
+import { CardModule } from 'primeng/card';
+import { PanelModule } from 'primeng/panel';
+
+
+const PRIME_NG_MODULES = [
+  ButtonModule,
+  MenuModule,
+  BadgeModule,
+  AvatarModule,
+  TabViewModule,
+  ChartModule,
+  CardModule,
+  PanelModule
+];
+
 @NgModule({
   imports: [...PRIME_NG_MODULES],
   declarations: [],

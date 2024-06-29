@@ -1,0 +1,33 @@
+
+@import "../../../sass/sass-variables.scss";
+@mixin places {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+}
+
+@mixin font {
+  font-size: 15px;
+  color: $text-light-color;
+  margin-bottom: 18px;
+}
+
+main{
+    background-color: $nav-color !important;
+    min-height: 100vh;
+}
+
+.container-fluid {
+  margin: auto;
+  padding: 20px;
+}
+
+
+
+
+
+
+.h-250 {
+  height: 250px !important;
+}

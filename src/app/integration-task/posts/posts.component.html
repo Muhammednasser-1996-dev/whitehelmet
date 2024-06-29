@@ -1,0 +1,23 @@
+<main>
+  <div class="container-fluid">
+    <!-- Search input -->
+    <input
+      type="text"
+      pInputText
+      [(ngModel)]="searchText"
+      (input)="onSearch()"
+      placeholder="Search posts..."
+    />
+
+    <!-- Display message if no posts found -->
+    <app-error-mesage *ngIf="filteredPosts.length === 0"></app-error-mesage>
+
+    <!-- Post cards -->
+
+    <div class="row">
+      <div class="col-md-4" *ngFor="let post of filteredPosts">
+        <app-post-card [post]="post"></app-post-card>
+      </div>
+    </div>
+  </div>
+</main>
