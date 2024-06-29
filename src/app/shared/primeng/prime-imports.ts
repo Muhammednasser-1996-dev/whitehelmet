@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-
-// ANGULAR MATERIAL
-
-// PRIME NG
+import { MenuModule } from 'primeng/menu';
+import { BadgeModule } from 'primeng/badge';
+import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
-const PRIME_NG_MODULES = [ButtonModule];
+import { TabViewModule } from 'primeng/tabview';
+import { ChartModule } from 'primeng/chart';
+const PRIME_NG_MODULES = [ButtonModule, MenuModule, BadgeModule,AvatarModule, TabViewModule, ChartModule];
 @NgModule({
   imports: [...PRIME_NG_MODULES],
   declarations: [],

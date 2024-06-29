@@ -1,0 +1,11 @@
+<section class="tabs">
+  <div [class.active]="activetab === 1" (click)="setActiveTab(1)" class="tab">
+    Home
+  </div>
+  <div [class.active]="activetab === 2" (click)="setActiveTab(2)" class="tab">
+    Budget
+  </div>
+  <div [class.active]="activetab === 3" (click)="setActiveTab(3)" class="tab">
+    Team <p-badge [value]="9" severity="info" />
+  </div>
+</section>
