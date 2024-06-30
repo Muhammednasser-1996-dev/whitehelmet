@@ -1,9 +1,19 @@
 @import "../../../../sass/sass-variables.scss";
 
+
+
+.h-250 {
+  height: 250px !important;
+}
+
 .card {
   margin-top: 20px;
   background-color: $active-color;
   .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
     .card-title {
       color: $white-color;
     }

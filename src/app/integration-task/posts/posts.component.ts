@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Post } from '../../core/models/post.model';
 import { ApiService } from '../../core/services/api.service';
+import { Router } from '@angular/router';
+import { AppRoutes } from '../../app.routes';
 
 @Component({
   selector: 'app-posts',
@@ -10,9 +12,9 @@ import { ApiService } from '../../core/services/api.service';
 export class PostsComponent {
   posts: Post[] = [];
   filteredPosts: Post[] = [];
-  searchText: string = '';
 
-  constructor(private ApiService: ApiService) {}
+
+  constructor(private ApiService: ApiService,private router: Router) { }
 
   ngOnInit(): void {
     this.ApiService.getPosts().subscribe((data: Post[]) => {
@@ -21,11 +23,17 @@ export class PostsComponent {
     });
   }
 
-  onSearch(): void {
+  onSearch(searchValue: string): void {
     this.filteredPosts = this.posts.filter(
       (post) =>
-        post.title.toLowerCase().includes(this.searchText.toLowerCase()) ||
-        post.body.toLowerCase().includes(this.searchText.toLowerCase())
+        post.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+        post.body.toLowerCase().includes(searchValue.toLowerCase())
     );
   }
+
+
+  navigateToDesignTak(){
+    this.router.navigate([AppRoutes.design]);
+  }
+
 }

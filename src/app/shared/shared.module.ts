@@ -8,6 +8,6 @@ import { ErrorMesageComponent } from './components/error-mesage/error-mesage.com
 @NgModule({
   declarations: [MenuListComponent, TabsViewComponent, ErrorMesageComponent],
   imports: [CommonModule, PrimengUI],
-  exports: [PrimengUI, MenuListComponent, TabsViewComponent,ErrorMesageComponent],
+  exports: [PrimengUI, MenuListComponent, TabsViewComponent, ErrorMesageComponent],
 })
-export class SharedModule {}
+export class SharedModule { }

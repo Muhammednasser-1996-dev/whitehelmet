@@ -1,13 +1,13 @@
 <main>
   <div class="container-fluid">
     <!-- Search input -->
-    <input
-      type="text"
-      pInputText
-      [(ngModel)]="searchText"
-      (input)="onSearch()"
-      placeholder="Search posts..."
-    />
+    <div class="d-flex justify-content-between align-items-center">
+      <app-search-input (search)="onSearch($event)"></app-search-input>
+      <button (click)="navigateToDesignTak()" class="settings fs-12">
+        <i class="pi pi-arrow-right-arrow-left"></i>
+        Switch to Design Task
+      </button>
+    </div>
 
     <!-- Display message if no posts found -->
     <app-error-mesage *ngIf="filteredPosts.length === 0"></app-error-mesage>
