@@ -1,0 +1,27 @@
+<div class="input-group w-75 mx-auto mt-5 mb-3">
+    <input [(ngModel)]="searchTerm" type="text" class="form-control" placeholder="search by name" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+<div class="w-75 mx-auto text-center">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Total Transaction Amount</th>
+                <th scope="col">Transactions Per Day</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of newCustomers|search:searchTerm">
+
+                <td>{{customer.name}}</td>
+                <td>{{customer.totalTransaction}}</td>
+                <td><button class="btn btn-success" (click)="viewAllTransactions(customer.transaction,customer.name)">view</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div *ngIf="allDates.length!==0" class=" mt-5 w-75 mx-auto">
+        <p-chart type="line" [data]="data" [options]="options" />
+    </div>
+</div>

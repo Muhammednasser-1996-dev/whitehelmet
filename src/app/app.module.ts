@@ -1,26 +1,28 @@
-// app.module.ts
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router'; // Import RouterModule
-import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
+
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
-import { CoreModule } from './core/core.module';
+import { AppComponent } from './app.component';
+import { ChartModule } from 'primeng/chart';
+import { TabelComponent } from './tabel/tabel.component';
+import { GraphComponent } from './graph/graph.component';
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    TabelComponent,
+    GraphComponent,
+    SearchPipe
+  ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([]),
-    SharedModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
+    ChartModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
